@@ -60,12 +60,19 @@ if __name__ == '__main__':
     rm1 = Borg()
     rm2 = Borg()
 
+    print(Borg.__dict__)
     rm1.state = 'Idle'
+    print(rm1.__dict__)
+    print(rm2.__dict__)
     rm2.state = 'Running'
+    print(rm2.__dict__)
 
     print('rm1: {0}'.format(rm1))
     print('rm2: {0}'.format(rm2))
-
+    rm4 = Borg()
+    print(rm4.__dict__)
+    print('rm1: {0}'.format(rm1))
+    print('rm2: {0}'.format(rm2))
     rm2.state = 'Zombie'
 
     print('rm1: {0}'.format(rm1))

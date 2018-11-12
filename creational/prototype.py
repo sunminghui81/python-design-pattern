@@ -40,10 +40,18 @@ class PrototypeDispatcher(object):
 def main():
     dispatcher = PrototypeDispatcher()
     prototype = Prototype()
-
+    print(prototype.__dict__)
     d = prototype.clone()
+    print(d.__dict__)
     a = prototype.clone(value='a-value', category='a')
+    print(a.__dict__)
     b = prototype.clone(value='b-value', is_checked=True)
+    print(b.__dict__)
+    print(b.__class__())
+    print(d.__class__())
+    print(d.__dict__)
+
+
     dispatcher.register_object('objecta', a)
     dispatcher.register_object('objectb', b)
     dispatcher.register_object('default', d)
